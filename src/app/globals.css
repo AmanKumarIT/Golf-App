@@ -45,3 +45,157 @@ body {
 @utility bg-gradient-brand {
   background-image: linear-gradient(to right, var(--color-primary-500), var(--color-secondary-500), var(--color-accent-500));
 }
+
+/* --- Responsive Enhancements --- */
+
+/* Base Refinements */
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Tablet & Mobile Overrides */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Mobile Overrides (768px and below) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  h2 {
+    font-size: 1.85rem !important;
+  }
+
+  /* Fixed header on mobile needs to be smaller */
+  header {
+    height: auto !important;
+    min-height: 4rem !important;
+  }
+
+  header .container {
+    height: 4rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Logo text adjustment for small screens */
+  header span.text-xl {
+    font-size: 1rem !important;
+  }
+
+  /* Navigation handling for mobile - usually hidden but I can style the container if needed */
+  header .hidden.md\:flex {
+    display: none !important;
+  }
+
+  /* Buttons in header - make them smaller */
+  header button, header a button {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 11px !important;
+    height: 2.5rem !important;
+  }
+
+  /* MAIN CONTENT: Fix the header overlap issue */
+  main.pt-20 {
+    padding-top: 6rem !important; /* Increase from 5rem to avoid overlap */
+  }
+
+  /* Hero Section scaling */
+  section.py-32, section.py-48 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+
+  /* Grid & Flex Stacking Improvements */
+  .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Dashboard winnings cards */
+  .sm\:flex-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 1.25rem !important;
+  }
+
+  /* Padding reductions for small screens */
+  .p-12, .p-8 {
+    padding: 1.25rem !important;
+  }
+
+  .gap-12 {
+    gap: 1rem !important;
+  }
+
+  /* Feature images in Impact section */
+  .w-1\/3, .w-2\/3 {
+    width: 100% !important;
+  }
+
+  /* Stats cards grid correction */
+  #impact .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Vertical offsets in impact section stats */
+  .mt-8, .-mt-8 {
+    margin-top: 0 !important;
+  }
+}
+
+/* Extra Small Devices (480px and below) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.1rem !important;
+  }
+
+  /* Header refinements for very narrow screens */
+  header .container {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
+  }
+
+  /* Simplify header content on tiny screens if things still collide */
+  header .flex.items-center.gap-4 button:first-child {
+    display: none !important; /* Hide "Admin Sign In" if it crowds too much */
+  }
+
+  .text-lg {
+    font-size: 0.95rem !important;
+  }
+
+  /* Form & Button adjustments */
+  .h-16 {
+    height: 3.25rem !important;
+  }
+
+  .px-8 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Fix for card images on mobile */
+  .aspect-square {
+    aspect-ratio: 16/9 !important;
+    height: auto !important;
+  }
+
+  /* Dashboard winnings detail font */
+  .text-lg.font-bold.text-white {
+    font-size: 1.125rem !important;
+  }
+}
